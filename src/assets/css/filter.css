@@ -1,0 +1,7 @@
+
+  /* 滤镜功能，原理是套个滤镜然后把原图移走，不然原图会挡住滤镜 */
+  .filter{
+    filter: drop-shadow(0 3000px 0px red);
+    position: relative;
+    bottom: 3000px;
+  }
