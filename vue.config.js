@@ -27,7 +27,7 @@ module.exports = {
             changeOrigin: true,
             //需要被代理的非同源服务器地址，转发时将拼接到以/myWebsite开头的请求的前面变成 http://www.dkc.com/myWebsite/...
             target: 'http://www.dkc.com/',
-            //将路径重写为空字符串，避免请求时带到被代理的服务器上
+            //将代理的路径重写为空字符串，避免请求时带到被代理的服务器上
             pathRewrite: { '^/myWebsite': '' }
             // ws: true //是否启用 websocket
         }
