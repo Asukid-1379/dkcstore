@@ -1,0 +1,29 @@
+
+@size: 400px;
+@nav-height: 44px;
+@tab-height: 44px;
+@Item_count: 4;
+
+html,body {
+  padding: 0;
+  margin: 0;
+  min-width: @size;
+  text-align: center;
+}
+
+/* 全局样式引用前面的变量是无效的，除非在组件内引入本文件，且这里的注释不能用 // */
+.boot {
+  width: @size;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: left;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+
+}
+

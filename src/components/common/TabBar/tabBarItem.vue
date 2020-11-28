@@ -33,19 +33,22 @@ export default {
   }
 </script>
 
-<style>
+<style lang='less' scoped>
   /* 导入一下滤镜 */
-  @import '~@assets/css/filter';
+  @import'~@assets/css/filter';
 
+  @img-size: 27px;
   #tab-bar-item{
     flex:1;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-  }
-
-  #tab-bar-item span img{
-    vertical-align: middle;
-    width: 29px;
-    height: 29px;
+    
+    span {
+      img {
+        vertical-align: middle;
+        width: @img-size;
+        height: @img-size;
+      }
+    }
   }
 </style>
