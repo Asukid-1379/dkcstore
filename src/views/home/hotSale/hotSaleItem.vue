@@ -18,18 +18,25 @@ export default {
 
 <style lang='less' scoped>
   @import '~@assets/css/base.less';
-  @text-pdding: 10px;
   .hot-sale-item {
-    text-align: center;
+    @text-pdding: 10px;
+    @item-num: 2;
+
+    .autoMargin(@item-num, 2.5%);
+
+    text-align: left;
     border: 1px solid #FF5C33;
     border-radius: 10px;
-    //项目占容器比例
-    flex: 0 0 47.5%;
-    margin: 1.666% .833% 0 1.666%;
-    &:nth-child(2n){
-      margin:1.666% 1.666% 0 .833%;
+    
+    .text;
+    .hsi-img {
+      img {
+        display: block;
+        width: 100%;
+        height: @size / @item-num - 10vm;
+        border-radius: 10px 10px 0 0 ;
+      }
     }
-
     .price {
       display: flex;
       justify-content: space-between;
@@ -39,22 +46,11 @@ export default {
         color: #FF5C33;
       }
     }
-
-    .hsi-img {
-      img {
-        vertical-align:middle;
-        width: 100%;
-        height: @size / 2 - 18vm;
-        border-radius: 10px 10px 0 0 ;
-      }
-    }
     .hsi-name, .hsi-abstract{
       .text;
       color: #000;
       padding: 0 @text-pdding;
-      -webkit-line-clamp:1;
     }
-
     .hsi-abstract {
       color: #777777;
     }

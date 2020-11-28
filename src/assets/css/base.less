@@ -1,8 +1,7 @@
 
-@size: 400px;
+@size: 500px;
 @nav-height: 44px;
 @tab-height: 44px;
-@Item_count: 4;
 
 html,body {
   padding: 0;
@@ -11,7 +10,7 @@ html,body {
   text-align: center;
 }
 
-/* 全局样式引用前面的变量是无效的，除非在组件内引入本文件，且这里的注释不能用 // */
+/* 全局样式引用前面的变量是无效的，除非在组件内引入本文件 */
 .boot {
   width: @size;
   margin: 0 auto;
@@ -25,5 +24,20 @@ html,body {
   -webkit-box-orient:vertical;
   -webkit-line-clamp:2;
 
+}
+
+.autoMargin(@recEachRowCount, @margin) {
+  //每个项目占据的空间 = 宽度 / 一行的数量 / 空隙的比例
+  @each-item-space: 100% / @recEachRowCount - @margin;
+  //每个项目的 margin = 一行的数量 * 空隙的比例 / 两边 / 空隙的数量(一行数量+1)
+  @each-margin: @recEachRowCount * @margin / 2 / (@recEachRowCount + 1);
+  //应用
+  flex: 0 0 @each-item-space;
+  margin: @each-margin;
+  //发现nth-child的参数不支持运算，但却接收字符串，于是先拼接字符串再传入
+  @item-num: ~'@{recEachRowCount}n+1';
+  &:nth-child(@{item-num}){
+    margin-left: @each-margin * 2;
+  }
 }
 

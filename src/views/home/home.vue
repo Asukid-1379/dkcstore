@@ -46,7 +46,7 @@ export default {
       carousel_list: [],
       carousel_time: 5000,
 
-      rec_num: 4,
+      rec_num: 10,
       rec_list: [],
 
       page_num: 12,
@@ -108,13 +108,13 @@ export default {
     .boot;
     background-color: #f1f1f1f1;
     padding-top: @nav-height;
-    padding-bottom: @tab-height + 10;
+    padding-bottom: @tab-height + 5;
     .line {
       font-size: 18px;
-      padding: 0 1.6%;
+      padding: 0 10px;
       font-weight: 700;
       text-align: left;
-      margin-top: 5px;
+      margin: 5px 5px 5px 5px;
       border-bottom: 1px solid #555555;
     }
     .nav-color {
