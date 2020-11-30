@@ -2,6 +2,8 @@
 @size: 500px;
 @nav-height: 44px;
 @tab-height: 44px;
+@hot-item-num: 2;   //在这里写好默认的，调用者可以在组件内自己覆盖这个值
+@rec-item-num: 4;
 
 html,body {
   padding: 0;
@@ -23,9 +25,9 @@ html,body {
   display:-webkit-box;
   -webkit-box-orient:vertical;
   -webkit-line-clamp:2;
-
 }
 
+//自动计算间距，方法是用 flex + 百分比, 计算项目和间隙占宽度的百分比，所有的加起来=100%
 .autoMargin(@recEachRowCount, @margin) {
   //每个项目占据的空间 = 宽度 / 一行的数量 / 空隙的比例
   @each-item-space: 100% / @recEachRowCount - @margin;

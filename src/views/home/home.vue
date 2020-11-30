@@ -46,7 +46,7 @@ export default {
       carousel_list: [],
       carousel_time: 5000,
 
-      rec_num: 10,
+      rec_num: 8,
       rec_list: [],
 
       page_num: 12,

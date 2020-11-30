@@ -20,9 +20,8 @@ export default {
   @import '~@assets/css/base.less';
   .hot-sale-item {
     @text-pdding: 10px;
-    @item-num: 2;
 
-    .autoMargin(@item-num, 2.5%);
+    .autoMargin(@hot-item-num, 2.5%);
 
     text-align: left;
     border: 1px solid #FF5C33;
@@ -33,7 +32,7 @@ export default {
       img {
         display: block;
         width: 100%;
-        height: @size / @item-num - 10vm;
+        height: @size / @hot-item-num - 10vm;
         border-radius: 10px 10px 0 0 ;
       }
     }
@@ -48,11 +47,14 @@ export default {
     }
     .hsi-name, .hsi-abstract{
       .text;
-      color: #000;
       padding: 0 @text-pdding;
+      -webkit-line-clamp:1;
+    }
+    .hsi-name {
+      color: #000;
     }
     .hsi-abstract {
-      color: #777777;
+      color: #acacac;
     }
   }
 

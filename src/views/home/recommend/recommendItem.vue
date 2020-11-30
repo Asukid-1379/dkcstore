@@ -17,16 +17,15 @@
   @import '~@assets/css/base.less';
 
   .recommend-item{
-    @item-num: 4;
     .text;
-    .autoMargin(@item-num, 2.5%);
+    .autoMargin(@rec-item-num, 2.5%);
     
     text-align: center;
     font-size: 14px;
     .recom-img {
       img {
         width: 100%;
-        height: @size / @item-num - 10vm;
+        height: @size / @rec-item-num - 10vm;
         border-radius: 10px;
       }
     }
